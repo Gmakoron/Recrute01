@@ -114,11 +114,11 @@ int main()
 	z = 1;
 	for (int i = 0; i < y; i++)
 	{
-		z *= x - 1;
+		z *= x - i;
 	}
 	for (int i = 0; i < y; i++)
 	{
-		z /= x - 1;
+		z /= y - i;
 	}
 	questions.push_back(
 		{
