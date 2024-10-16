@@ -3,6 +3,8 @@
 #include<random>
 #include<vector>
 #include"question.h"
+#include"exam_japanese.h"
+using namespace std;
 
 //最大公約数を求める
 int gcd(int a, int b)
@@ -121,6 +123,14 @@ int main()
 	);
 
 	std::cout << "[リクルート試験対策クイズ]\n";
+
+	cout << "教科を選んでください/n1=数学/n2=国語/\n";
+	int subject;
+	cin >> subject;
+	if (subject == 2)
+	{
+		questions = CreateKanjiExam();
+	}
 
 	for (const auto& e : questions)
 	{
