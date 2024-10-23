@@ -235,6 +235,11 @@ QuestionList CreateAntonymExam()
 		{"‹Ù’£(‚«‚ñ‚¿‚å‚¤)","’oŠÉ(‚µ‚©‚ñ)" },{"‰ß‘a(‚©‚»)","‰ß–§(‚©‚İ‚Â)"},
 		{"‰h“](‚¦‚¢‚Ä‚ñ)","¶‘J(‚³‚¹‚ñ)" },{"Á”ï(‚µ‚å‚¤‚Ğ)","¶Y(‚¹‚¢‚³‚ñ)"},
 		{"ˆÙ’[(‚¢‚½‚ñ)","³“(‚¹‚¢‚Æ‚¤)" },{"‘¸Œh(‚»‚ñ‚¯‚¢)","Œy•Ì(‚¯‚¢‚×‚Â)"},
+		{"Œx‰ú(‚¯‚¢‚©‚¢)","–û’f(‚ä‚¾‚ñ)" },{"ŒÍŠ‰(‚±‚©‚Â)","‘ò(‚¶‚ã‚ñ‚½‚­)"},
+		{"‹A”[(‚«‚Ì‚¤)","‰‰ãˆ(‚¦‚ñ‚¦‚«)" },{"Š£‘‡(‚©‚ñ‚»‚¤)","¼(‚µ‚Â‚¶‚ã‚ñ)"},
+		{"Ü^(‚µ‚å‚¤‚³‚ñ)","”l“|(‚Î‚Æ‚¤)" },{"’†•(‚¿‚ã‚¤‚·‚¤)","––’[(‚Ü‚Á‚½‚ñ)"},
+		{"â^(‚º‚Á‚³‚ñ)","“•](‚±‚­‚Ğ‚å‚¤)" },{"‘n‘¢(‚»‚¤‚¼‚¤)","–Í•í(‚à‚Ù‚¤)"},
+		{"‰ßŒƒ(‚©‚°‚«)","‰¶Œb(‚¨‚ñ‚¯‚¢)" },{"¿‘f(‚µ‚Á‚»)","‰Ø”ü(‚©‚Ñ)"},
 	};
 
 	constexpr int quizCount = 5;
@@ -260,6 +265,76 @@ QuestionList CreateAntonymExam()
 		for (int j = 0; j < 4; j++)
 		{
 			s += "\n" + to_string(j + 1) + ":" + data[answers[j]].kanji[other];
+		}
+		questions.push_back({ s,to_string(correctNo) });
+	}
+	return questions;
+}
+
+QuestionList CreateSynonymExam()
+{
+	const struct {
+		int count;	//—v‘f”
+		const char* kanji[4];	//—Ş‹`Œê‚Ì”z—ñ
+	}data[] = {
+		{2,"’‡‰î(‚¿‚ã‚¤‚©‚¢)","ˆ´ù(‚ ‚Á‚¹‚ñ)" },
+		{3,"šîÀ(‚æ‚¤‚¹‚¢)","šîÜ(‚æ‚¤‚¹‚Â)","‘¢(‚»‚¤‚¹‚¢)"},
+		{3,"ŒğÂ(‚±‚¤‚µ‚å‚¤)","ÜÕ(‚¹‚Á‚µ‚å‚¤)","‹¦‹c(‚«‚å‚¤‚¬)"},
+		{3,"”²ŒQ(‚Î‚Â‚®‚ñ)","Œ†o(‚¯‚Á‚µ‚ã‚Â)","oF(‚µ‚ã‚Á‚µ‚å‚­)"},
+		{4,"n’m(‚¶‚ã‚­‚¿)","’Ê‹Å(‚Â‚¤‚¬‚å‚¤)","’m»(‚¿‚µ‚Â)","¸’Ê(‚¹‚¢‚Â‚¤)"},
+		{2,"‰ˆŠv(‚¦‚ñ‚©‚­)","•Ï‘J(‚Ö‚ñ‚¹‚ñ)" },
+		{2,"‰ğŒÙ(‚©‚¢‚±)","”ë–Æ(‚Ğ‚ß‚ñ)" },
+		{2,"‰Ë‹ó(‚©‚­‚¤)","‹•\(‚«‚å‚±‚¤)" },
+		{2,"‹@•q(‚«‚Ñ‚ñ)","v‘¬(‚¶‚ñ‚»‚­)" },
+		{3,"ˆÏ×(‚¢‚³‚¢)","Ú×(‚µ‚å‚¤‚³‚¢)","q×(‚µ‚³‚¢)"},
+		{3,"’š”J(‚Ä‚¢‚Ë‚¢)","œ¾œç(‚¢‚ñ‚¬‚ñ)","’šd(‚Ä‚¢‚¿‚å‚¤)"},
+		{3,"Šñ—^(‚«‚æ)","vŒ£(‚±‚¤‚¯‚ñ)","s—Í(‚¶‚ñ‚è‚å‚­)"},
+		{3,"Šëœœ(‚«‚®)","Œœ”O(‚¯‚Ë‚ñ)","—J—¶(‚ä‚¤‚è‚å)"},
+		{3,"Œh•(‚¯‚¢‚Ó‚­)","Š´S(‚©‚ñ‚µ‚ñ)","Š´–Á(‚©‚ñ‚ß‚¢)"},
+		{3,"Œ˜(‚¯‚ñ‚¶)","ŒÅ·(‚±‚µ‚Â)","–nç(‚Ú‚­‚µ‚ã)"},
+	};
+
+	constexpr int quizCount = 5;
+	QuestionList questions;
+	questions.reserve(quizCount);
+	const vector<int> indices = CreateRandomIndices(size(data));
+	random_device rd;
+
+	for (int i = 0; i < quizCount; i++)
+	{
+		//ŠÔˆá‚Á‚½”Ô†‚ğƒ‰ƒ“ƒ_ƒ€‚É‘I‚Ô
+		const int correctIndex = indices[i];
+		vector<int> answers = CreateWrongIndices(size(data), correctIndex);
+
+		//ƒ‰ƒ“ƒ_ƒ€‚ÈˆÊ’u‚ğ³‚µ‚¢”Ô†‚Åã‘‚«
+		const int correctNo = uniform_int_distribution<>(1, 4)(rd);
+		answers[correctNo - 1] = correctIndex;
+
+		//o‘è‚·‚é—Ş‹`Œê‚ğ‘I‘ğ
+		const auto& e = data[indices[i]];
+		const int object = uniform_int_distribution<>(0, e.count - 1)(rd);
+
+		//–â‘è•¶‚ğì¬
+		string s = "u" + string(data[correctIndex].kanji[object]) + "v‚Ì—Ş‹`Œê‚Æ‚µ‚Ä³‚µ‚¢”Ô†‚ğ‘I‚×";
+		for (int j = 0; j < 4; j++)
+		{
+			if (j == correctNo - 1)
+			{
+				//o‘è‚·‚é‚²uˆÈŠOv‚Ì—Ş‹`Œê‚ğ³‰ğ‚Æ‚µ‚Ä‘I‘ğ
+				int other = uniform_int_distribution<>(0, e.count - 2)(rd);
+				if (other >= object)
+				{
+					other++;
+				}
+				s += "\n" + to_string(j + 1) + ":" + data[answers[j]].kanji[other];
+			}
+			else
+			{
+				//Œë“š‚ğ‘I‘ğ
+				const auto& f = data[answers[j]];
+				const int k = uniform_int_distribution<>(0, f.count - 1)(rd);
+				s += "\n" + to_string(j + 1) + ":" + data[answers[j]].kanji[k];
+			}
 		}
 		questions.push_back({ s,to_string(correctNo) });
 	}
