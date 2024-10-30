@@ -119,6 +119,36 @@ QuestionList CreateEnglishPhraseExam()
 
 		{"be not supposed to [A]","[A]してはいけないことになっている",
 		"You are not supposed to enter this room.","この部屋に入ってはいけません",3,{2,3,4}},
+
+		{"be going to [A]","[A]するつもりだった",
+		"I am going to visit Osaka.","大阪に行くつもりだった。",2,{2,3}},
+
+		{"turn to [A] for [B]","[A]に[B]を求める",
+		"She turn to the friends for help.","彼女は友達に助けを求めた。",3,{1,2,5}},
+
+		{"neither [A] nor [B]","[A]も[B]も両方とも～ない",
+		"We have neither the time nor the resources.","我々には時間も資源をない。",2,{2,5}},
+
+		{"it is not until [A] that [B]","[A]して初めて[B]する",
+		"It was not until dawn that the trouble solved.","夜明けまで問題は解決しなかった。",3,{2,3,5}},
+
+		{"[A] as well as [B]","[B]だけでなく[A]も",
+		"He can speak French as well as English.","彼は英語だけではなくフランス語も話せる。",2,{5,6}},
+
+		{"[A] remain [B]","[A]が[B]のままでいる",
+		"She remain silent.","彼女は黙っていた。",1,{1}},
+
+		{"both [A] and [B]","[A]と[B]の両方とも",
+		"This bag is both quality and cheap.","このかばんは品質がいいうえに安い。",1,{5}},
+
+		{"either [A] or [B]","[A]か[B]のどちらか",
+		"You can either call me at home or the office.","自宅またはオフィスで電話してください。",1,{7}},
+
+		{"not only [A] but also [B]","[A]だけでなく[B]も",
+		"He likes not only movies but also books.","彼は映画だけではなく本も好きだ。",3,{2,5,6}},
+
+		{"take care of [A]","[A]の世話をする",
+		"She always takes care of her sister.","彼女はいつも妹の面倒を見ている。",1,{4}},
 	};
 
 	constexpr int quizCount = 5;
