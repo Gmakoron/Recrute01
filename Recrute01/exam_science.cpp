@@ -43,6 +43,40 @@ QuestionList CreatePhysicsExam()
 			to_string(v0 * t + a * t * t / 2) + "m進んで停止した(v=0)\nブレーキの加速度をm/s^2単位で求めよ",to_string(a) });
 	}
 
+	{//重力加速度
+		int t = uniform_int_distribution<>(1, 10)(rd);	//移動時間
+		int x = 98 * t * t 
+			/ 2;		//10倍することで、小数点以下第1位までを整数としてあらわす
+		string answer = to_string(x / 10);	//整数部を文字列化
+		if (x % 10)
+		{
+			//少数部がある場合は小数部を文字列化
+			answer += '.';
+			answer += '0' + x % 10;
+		}
+		questions.push_back({ "重力加速度を9.8m/s^2とする。\n十分な位高い位置から物体を静かに落とすと、物体は" +
+			to_string(t) + "秒間でXm落下する。\nXの値を少数点以下第1位まで求めよ。(空気抵抗は考えないものとする)",
+			answer });
+
+		int v0 = uniform_int_distribution<>(1, 10)(rd);	//初速
+		t = uniform_int_distribution<>(1, 10)(rd);	//移動時間
+		int v = v0 * 10 - 98 * t;	//速度
+		answer.clear();
+		if (v < 0)
+		{
+			v = -v;
+			answer = '-';
+		}
+		answer += to_string(v / 10);
+		if (v % 10)
+		{
+			answer += '.';
+			answer += '0' + v % 10;
+		}
+		questions.push_back({ "重力加速度を9.8m/s^2とする。\n初速" + to_string(v0) + "m/sで物体を鉛直に投げたとき," +
+			to_string(t) + "秒後の物体の速度はXm/sである。\nXの値を小数点以下第1位まで求めよ。(空気抵抗は考えないものとする)",
+			answer });
+	}
 
 	return questions;
 }
